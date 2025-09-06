@@ -1,14 +1,193 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const Header = () => {
+const pages = [
+  { name: "Accueil", href: "/" },
+  { name: "A propos de nous", href: "/a-propos" },
+  { name: "Services", href: "/services" },
+  { name: "Boîte à outils", href: "/boite-outils" },
+  { name: "Nous contacter", href: "/contact" },
+  { name: "Connexion", href: "/login" },
+];
+
+export default function Header() {
+  const [open, setOpen] = useState(false);
+  const [animateOut, setAnimateOut] = useState(false);
+  // Toggle menu avec animation inverse
+  const handleToggleMenu = () => {
+    if (open) {
+      setAnimateOut(true);
+      setTimeout(() => {
+        setOpen(false);
+        setAnimateOut(false);
+        // setAnimateBar(false);
+      }, 900); // Durée animation keyframes
+    } else {
+      setOpen(true);
+    }
+  };
 
   return (
     <>
-      <header className="flex w-full flex-wrap justify-center">
-      
-      </header>
+      <nav className="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row items-center bg-[#FDF7EF] justify-between px-5 py-3 border-b rounded-b-lg shadow">
+        {/* Partie logo et bouton menu */}
+        <div className="flex flex-row items-center w-full ">
+          <img
+            className="w-15 my-auto"
+            src="./images/logo.svg"
+            alt="Synégo logo"
+          />
+          <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
+            SYNÉGO
+          </span>
+
+          {/* Bouton menu mobile visible seulement en mobile */}
+          <button
+            onClick={handleToggleMenu}
+            className="md:hidden ml-auto w-10 h-10 flex items-center justify-center border-2 border-[#0A1D35] rounded-full"
+            aria-label={
+              open ? "Fermer le menu mobile" : "Ouvrir le menu mobile"
+            }
+          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </button>
+
+          {/* Liens desktop : les 5 premiers à gauche et le dernier à droite */}
+          <div className="hidden md:flex md:ml-8 w-full justify-between items-center">
+            {/* Les 5 premiers à gauche */}
+            <div className="flex space-x-8">
+              {pages.slice(0, 5).map((page) => (
+                <Link
+                  key={page.name}
+                  href={page.href}
+                  className="text-[#0A1D35] hover:text-[#6CAED6] transition"
+                >
+                  {page.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Le dernier à droite avec bordure */}
+            <Link
+              href={pages[pages.length - 1].href}
+              className="text-[#0A1D35] transition border rounded-lg border-[#0A1D35] px-5 mr-8"
+            >
+              {pages[pages.length - 1].name}
+            </Link>
+          </div>
+        </div>
+
+        {/* Menu mobile plein écran animé */}
+        {open && (
+          <div
+            className="fixed top-0 left-0 flex flex-col w-full h-[85vh] bg-[#6CAED6] z-40 overflow-y-auto"
+            style={{
+              animationName: !animateOut ? "menu-anim" : "menu-anim-reverse",
+              animationDuration: "900ms",
+              animationTimingFunction: "ease-out",
+              animationFillMode: "forwards",
+            }}
+          >
+            <ul className="flex flex-col w-full items-center gap-6 font-bold text-lg text-center mt-[100px] text-[#FDF7EF]">
+              {pages.map((page) => (
+                <li key={page.name}>
+                  <Link
+                    href={page.href}
+                    onClick={handleToggleMenu}
+                    className="relative inline-block px-4 py-2 no-underline hover:underline"
+                  >
+                    {page.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            {/* Barre animée ou autre contenu éventuellement */}
+          </div>
+        )}
+      </nav>
+
+      {(open || animateOut) && (
+        <div
+          className={`fixed top-25 z-20 left-0 flex flex-col w-full h-3/4 bg-[#6CAED6] overflow-hidden`}
+          style={{
+            animationName:
+              open && !animateOut
+                ? "menu-anim"
+                : animateOut
+                ? "menu-anim-reverse"
+                : "none",
+            animationDuration: "900ms",
+            animationTimingFunction: "ease-out",
+            animationFillMode: "forwards",
+          }}
+        >
+          <ul className="flex flex-col w-full items-center gap-6 font-bold text-lg text-center mt-[100px] p-0 list-none text-[#FDF7EF]">
+            {pages.map((page) => (
+              <li key={page.name}>
+                <Link
+                  href={page.href}
+                  onClick={handleToggleMenu}
+                  className="relative inline-block px-4 py-2 no-underline hover:underline"
+                >
+                  {page.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          {/* Barre colorée animée en bas */}
+          {/* <div className="m-50 bottom-20 w-full h-3/4 bg-[black] animate-bar-slide" /> */}
+        </div>
+      )}
+
+      <style jsx global>{`
+        @keyframes menu-anim {
+          0% {
+            left: 0;
+            bottom: -99%;
+            width: 0;
+          }
+          33% {
+            left: -99.5%;
+            bottom: -99%;
+            width: 80%;
+          }
+          66% {
+            left: -99.5%;
+            bottom: 0;
+            width: 60%;
+          }
+          100% {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+          }
+        }
+        @keyframes menu-anim-reverse {
+          0% {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+          }
+          33% {
+            left: -99.5%;
+            bottom: 0;
+            width: 80%;
+          }
+          66% {
+            left: -99.5%;
+            bottom: -99%;
+            width: 60%;
+          }
+          100% {
+            left: 0;
+            bottom: -99%;
+            width: 0;
+          }
+        }
+      `}</style>
     </>
   );
-};
-
-export default Header;
+}
