@@ -16,15 +16,13 @@ const pages = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
-  // Toggle menu avec animation inverse
   const handleToggleMenu = () => {
     if (open) {
       setAnimateOut(true);
       setTimeout(() => {
         setOpen(false);
         setAnimateOut(false);
-        // setAnimateBar(false);
-      }, 900); // Durée animation keyframes
+      }, 900); 
     } else {
       setOpen(true);
     }
