@@ -33,32 +33,19 @@ export default function Header() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row items-center bg-[#FDF7EF] justify-between px-5 py-3 border-b rounded-b-lg shadow">
-        {/* Partie logo et bouton menu */}
-        <div className="flex flex-row items-center w-full ">
-          <img
-            className="w-15 my-auto"
-            src="./images/logo.svg"
-            alt="Synégo logo"
-          />
-          <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
-            SYNÉGO
-          </span>
-
-          {/* Bouton menu mobile visible seulement en mobile */}
-          <button
-            onClick={handleToggleMenu}
-            className="md:hidden ml-auto w-10 h-10 flex items-center justify-center border-2 border-[#0A1D35] rounded-full"
-            aria-label={
-              open ? "Fermer le menu mobile" : "Ouvrir le menu mobile"
-            }
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
-
-          {/* Liens desktop : les 5 premiers à gauche et le dernier à droite */}
-          <div className="hidden md:flex md:ml-8 w-full justify-between items-center">
-            {/* Les 5 premiers à gauche */}
-            <div className="flex space-x-8">
+        <div className="flex w-full flex-row justify-between">
+          <div className="flex flex-row items-center w-[15%] ">
+            <img
+              className="w-15 my-auto"
+              src="./images/logo.svg"
+              alt="Synégo logo"
+            />
+            <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
+              SYNÉGO
+            </span>
+          </div>
+          <div className="flex lg:w-[85%] justify-between my-auto">
+            <div className="hidden lg:flex space-x-8 mt-3 md:mt-0">
               {pages.slice(0, 5).map((page) => (
                 <Link
                   key={page.name}
@@ -69,21 +56,32 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-
-            {/* Le dernier à droite avec bordure */}
-            <Link
-              href={pages[pages.length - 1].href}
-              className="text-[#0A1D35] transition border rounded-lg border-[#0A1D35] px-5 mr-8"
-            >
-              {pages[pages.length - 1].name}
-            </Link>
+            <div className="flex w-full lg:hidden">
+              <button
+                onClick={handleToggleMenu}
+                className="ml-auto w-10 h-10 flex items-center justify-center border-2 border-[#0A1D35] rounded-full"
+                aria-label={
+                  open ? "Fermer le menu mobile" : "Ouvrir le menu mobile"
+                }
+              >
+                {open ? <CloseIcon /> : <MenuIcon />}
+              </button>
+            </div>
+            {/* Bouton Connexion visible uniquement en md+ et aligné à droite */}
+            <div className="hidden md:flex lg:m-0 md:ml-2 items-center h-[2rem] sm:m-auto">
+              <Link
+                href={pages[pages.length - 1].href}
+                className="text-[#0A1D35] transition border rounded-lg border-[#0A1D35] px-5 "
+              >
+                {pages[pages.length - 1].name}
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Menu mobile plein écran animé */}
         {open && (
           <div
-            className="fixed top-0 left-0 flex flex-col w-full h-[85vh] bg-[#6CAED6] z-40 overflow-y-auto"
+            className="fixed top-21 left-0 flex flex-col w-full h-[85vh] bg-[#6CAED6] z-40 overflow-y-auto"
             style={{
               animationName: !animateOut ? "menu-anim" : "menu-anim-reverse",
               animationDuration: "900ms",
