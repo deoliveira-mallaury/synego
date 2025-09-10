@@ -22,7 +22,7 @@ export default function Header() {
       setTimeout(() => {
         setOpen(false);
         setAnimateOut(false);
-      }, 900); 
+      }, 900);
     } else {
       setOpen(true);
     }
@@ -138,7 +138,6 @@ export default function Header() {
           </ul>
         </div>
       )}
-
       <style jsx global>{`
         @keyframes menu-anim {
           0% {
