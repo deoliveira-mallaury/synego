@@ -22,40 +22,33 @@ export default function Header() {
       setTimeout(() => {
         setOpen(false);
         setAnimateOut(false);
-      }, 900); 
+      }, 900);
     } else {
       setOpen(true);
     }
   };
+
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row items-center bg-[#FDF7EF] justify-between px-5 py-3 border-b rounded-b-lg shadow">
-        <div className="flex flex-row items-center w-full ">
-          <img
-            className="w-15 my-auto"
-            src="./images/logo.svg"
-            alt="Synégo logo"
-          />
-          <span className="text-xl font-semibold tracking-wide ml-2">
-            SYNÉGO
-          </span>
-          <button
-            onClick={handleToggleMenu}
-            className="md:hidden ml-auto w-10 h-10 flex items-center justify-center border-2 border-[#0A1D35] rounded-full"
-            aria-label={
-              open ? "Fermer le menu mobile" : "Ouvrir le menu mobile"
-            }
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
-          <div className="hidden md:flex md:ml-8 w-full justify-between items-center">
-            {/* Les 5 premiers à gauche */}
-            <div className="flex space-x-8">
+        <div className="flex w-full flex-row justify-between">
+          <div className="flex flex-row items-center w-[15%] ">
+            <img
+              className="w-15 my-auto"
+              src="./images/logo.svg"
+              alt="Synégo logo"
+            />
+            <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
+              SYNÉGO
+            </span>
+          </div>
+          <div className="flex lg:w-[85%] justify-between my-auto">
+            <div className="hidden lg:flex space-x-8 mt-3 md:mt-0">
               {pages.slice(0, 5).map((page) => (
                 <Link
                   key={page.name}
                   href={page.href}
-                  className="hover:text-[#6CAED6] transition"
+                  className="text-[#0A1D35] hover:text-[#6CAED6] transition"
                 >
                   {page.name}
                 </Link>
@@ -138,7 +131,6 @@ export default function Header() {
           </ul>
         </div>
       )}
-
       <style jsx global>{`
         @keyframes menu-anim {
           0% {
