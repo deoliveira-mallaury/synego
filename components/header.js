@@ -22,7 +22,7 @@ export default function Header() {
       setTimeout(() => {
         setOpen(false);
         setAnimateOut(false);
-      }, 900); 
+      }, 900);
     } else {
       setOpen(true);
     }
@@ -75,7 +75,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-
         {open && (
           <div
             className="fixed top-21 left-0 flex flex-col w-full h-[85vh] bg-[#6CAED6] z-40 overflow-y-auto"
@@ -102,7 +101,6 @@ export default function Header() {
           </div>
         )}
       </nav>
-
       {(open || animateOut) && (
         <div
           className={`fixed top-25 z-20 left-0 flex flex-col w-full h-3/4 bg-[#6CAED6] overflow-hidden`}
@@ -133,7 +131,6 @@ export default function Header() {
           </ul>
         </div>
       )}
-
       <style jsx global>{`
         @keyframes menu-anim {
           0% {
