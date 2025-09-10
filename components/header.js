@@ -40,7 +40,7 @@ export default function Header() {
             src="./images/logo.svg"
             alt="Synégo logo"
           />
-          <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
+          <span className="text-xl font-semibold tracking-wide ml-2">
             SYNÉGO
           </span>
 
@@ -63,7 +63,7 @@ export default function Header() {
                 <Link
                   key={page.name}
                   href={page.href}
-                  className="text-[#0A1D35] hover:text-[#6CAED6] transition"
+                  className="hover:text-[#6CAED6] transition"
                 >
                   {page.name}
                 </Link>
