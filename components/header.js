@@ -16,15 +16,13 @@ const pages = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
-  // Toggle menu avec animation inverse
   const handleToggleMenu = () => {
     if (open) {
       setAnimateOut(true);
       setTimeout(() => {
         setOpen(false);
         setAnimateOut(false);
-        // setAnimateBar(false);
-      }, 900); // Durée animation keyframes
+      }, 900); 
     } else {
       setOpen(true);
     }
@@ -67,7 +65,6 @@ export default function Header() {
                 {open ? <CloseIcon /> : <MenuIcon />}
               </button>
             </div>
-            {/* Bouton Connexion visible uniquement en md+ et aligné à droite */}
             <div className="hidden md:flex lg:m-0 md:ml-2 items-center h-[2rem] sm:m-auto">
               <Link
                 href={pages[pages.length - 1].href}
@@ -102,7 +99,6 @@ export default function Header() {
                 </li>
               ))}
             </ul>
-            {/* Barre animée ou autre contenu éventuellement */}
           </div>
         )}
       </nav>
@@ -135,8 +131,6 @@ export default function Header() {
               </li>
             ))}
           </ul>
-          {/* Barre colorée animée en bas */}
-          {/* <div className="m-50 bottom-20 w-full h-3/4 bg-[black] animate-bar-slide" /> */}
         </div>
       )}
 
