@@ -4,11 +4,11 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const HomePage = () => {
   return (
     <div className="font-sans mt-20 bg-[#FDF7EF] text-gray-800">
-      <div className="bg-[#0A1D35] py-7 px-4 md:h-115 lg:h-[60vh]">
+      <div className="bg-[#0A1D35] py-7 px-4 lg:h-[60vh]">
         <h1 className="text-3xl text-[#FDF7EF] font-bold text-center mb-8">
           SYNÉGO
         </h1>
-        <section className="bg-[#D0E7F5] md:bg-[#0A1D35] rounded-[10px] w-full max-w-8xl mx-auto flex flex-col md:flex-row items-stretch px-6 md:px-12 py-8 gap-6">
+        <section className="bg-[#D0E7F5] md:bg-[#0A1D35] rounded-[10px] w-full max-w-8xl mx-auto flex flex-col md:flex-row items-stretch px-6 md:px-8 py-8 gap-6">
           <div className="flex-1 flex flex-col justify-between text-center ">
             <div>
               <div className="w-full h-48 lg:h-80 bg-gray-100 rounded mb-6 flex items-center justify-center">
