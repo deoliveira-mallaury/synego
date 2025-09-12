@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   return (
-    <>
+    <div className="mb-20">
       <nav className="fixed top-0 left-0 w-full z-50 flex flex-col md:flex-row items-center bg-[#FDF7EF] justify-between px-5 py-3 border-b rounded-b-lg shadow">
         <div className="flex w-full flex-row justify-between">
           <div className="flex flex-row items-center w-[15%] ">
@@ -177,6 +177,6 @@ export default function Header() {
           }
         }
       `}</style>
-    </>
+    </div>
   );
 }
