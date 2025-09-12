@@ -6,7 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const pages = [
   { name: "Accueil", href: "/" },
-  { name: "A propos de nous", href: "/a-propos" },
+  { name: "A propos de nous", href: "/aboutus" },
   { name: "Services", href: "/services" },
   { name: "Boîte à outils", href: "/boite-outils" },
   { name: "Nous contacter", href: "/contact" },
