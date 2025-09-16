@@ -27,7 +27,7 @@ const HomePage = () => {
           <div className="flex-1 flex-col justify-between items-center hidden md:flex">
             <div className="w-full h-48 flex items-center justify-center">
               <img
-                src="./images/cercle.webp"
+                src="/images/cercle.webp"
                 alt="Synégo coaching"
                 className="w-32 lg:w-50"
               />
@@ -40,7 +40,7 @@ const HomePage = () => {
           </div>
         </section>
       </div>
-      <img className="wave" src="./images/wave.svg" alt="Synégo logo" />
+      <img className="wave" src="/images/wave.svg" alt="Synégo logo" />
       <div className="md:flex hidden">
         <KeyboardArrowDownIcon
           className="mx-auto mt-[-50] "
@@ -59,7 +59,7 @@ const HomePage = () => {
             </p>
             <button className="bg-[#6CAED6] my-5 flex items-center justify-center gap-2 px-4 py-2 rounded-[0.9375rem] text-[#FDF7EF] hover:bg-blue-700 transition w-[9rem] h-[2.5625rem]">
               <img
-                src="./images/Calendar.svg"
+                src="/images/Calendar.svg"
                 alt="Calendar icon"
                 className="w-[2.1875rem] h-[2.125rem]"
               />
