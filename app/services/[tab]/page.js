@@ -14,7 +14,6 @@ const ServicesPage = () => {
 
   return (
     <div className="font-sans mt-20 bg-[#FDF7EF] text-gray-800">
-      {/* Boutons visibles sur toutes les pages */}
       <div className="flex justify-center flex-row flex-wrap">
         <h1 className="text-lg font-bold text-center w-full mt-4">SERVICES</h1>
 
@@ -37,7 +36,6 @@ const ServicesPage = () => {
         </button>
       </div>
 
-      {/* Affichage dynamique du contenu */}
       <div className="pt-6">
         {tab === "coaching" && <Coaching />}
         {tab === "formation" && <Formation />}

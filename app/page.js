@@ -4,19 +4,13 @@ import Coaching from "../components/Coaching";
 import Formation from "../components/Formation";
 import Toolbox from "./toolbox/page";
 import Register from "./register/page";
-import { Login } from "@mui/icons-material";
 
 export default function Home() {
   return (
     <>
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <HomePage />
-        <Aboutus />
-        <Coaching />
-        <Formation />
-        <Toolbox />
-        <Login />
-        <Register />
+         <HomePage />
+
       </main>
     </>
   );
