@@ -73,7 +73,7 @@ const Aboutus = () => {
             className="flex flex-col items-center w-[40%] mx-auto text-center rounded-xl shadow-md p-6"
           >
             <img
-              src={`./images/${item.icon}`}
+              src={`/images/${item.icon}`}
               alt="Synégo coaching"
               className="w-14 lg:w-20 mb-4 shadow-md rounded-2xl"
             />
