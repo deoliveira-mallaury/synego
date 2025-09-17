@@ -35,12 +35,15 @@ export default function Header() {
           <div className="flex flex-row items-center w-[15%] ">
             <img
               className="w-15 my-auto"
-              src="./images/logo.svg"
+              src="/images/logo.svg"
               alt="Synégo logo"
             />
-            <span className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
-              SYNÉGO
-            </span>
+            <Link href={"/"} className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
+            SYNÉGO
+            </Link>
+            {/* <span className="">
+              
+            </span> */}
           </div>
           <div className="flex lg:w-[85%] justify-between my-auto">
             <div className="hidden lg:flex space-x-8 mt-3 md:mt-0">
