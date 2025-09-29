@@ -8,7 +8,7 @@ const pages = [
   { name: "Accueil", href: "/" },
   { name: "A propos de nous", href: "/aboutus" },
   { name: "Services", href: "/services" },
-  { name: "Boîte à outils", href: "/boite-outils" },
+  { name: "Boîte à outils", href: "/toolbox" },
   { name: "Nous contacter", href: "/contact" },
   { name: "Connexion", href: "/login" },
 ];
