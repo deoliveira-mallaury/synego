@@ -3,7 +3,7 @@ import React from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const HomePage = () => {
   return (
-    <div className="font-sans mt-20 bg-[#FDF7EF] text-gray-800">
+    <div className="font-sans bg-[#FDF7EF] text-gray-800">
       <div className="bg-[#0A1D35] py-7 px-4 lg:h-[60vh]">
         <h1 className="text-3xl text-[#FDF7EF] font-bold text-center mb-8">
           SYNÉGO
@@ -47,7 +47,7 @@ const HomePage = () => {
           sx={{ fontSize: "4rem", color: "#0A1D35", cursor: "pointer" }}
         />
       </div>
-      <section className="py-10 px-6 lg:mt-20 bg-[#FDF7EF] ">
+      <section className="py-10 px-6  bg-[#FDF7EF] ">
         <div className="flex justify-center gap-[2%] flex-wrap">
           {/* COACHING */}
           <div className="bg-[url(/images/coachingMobile.svg)] h-100 w-[49%] lg:w-[24%] md:bg-[url(/images/coachingMd.svg)] md:h-65 rounded-2xl bg-cover flex flex-col items-center justify-center pt-40 md:pt-0 md:pl-50">
@@ -90,7 +90,7 @@ const HomePage = () => {
       </section>
 
       {/* Section Accès Téléchargement */}
-      <section className="bg-[#D0E7F5] w-[90%] md:w-[70%] lg:w-[30%] mx-auto rounded-[10px] border-3 border-[#0A1D35] py-5 px-6 md:px-20 text-center">
+      <section className="bg-[#D0E7F5] w-[90%] md:w-[70%] lg:w-[30%] mb-50 mx-auto rounded-[10px] border-3 border-[#0A1D35] py-5 px-6 md:px-20 text-center">
         <div className="flex">
           <img
             className="w-6 md:w-10 md:h-10 h-6 my-auto"
