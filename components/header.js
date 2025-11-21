@@ -3,7 +3,6 @@ import { useState } from "react";
 import Link from "next/link";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-
 const pages = [
   { name: "Accueil", href: "/" },
   { name: "A propos de nous", href: "/aboutus" },
@@ -38,8 +37,11 @@ export default function Header() {
               src="/images/logo.svg"
               alt="Synégo logo"
             />
-            <Link href={"/"} className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2">
-            SYNÉGO
+            <Link
+              href={"/"}
+              className="text-[#0A1D35] text-xl font-semibold tracking-wide ml-2"
+            >
+              SYNÉGO
             </Link>
             {/* <span className="">
               
@@ -68,14 +70,12 @@ export default function Header() {
                 {open ? <CloseIcon /> : <MenuIcon />}
               </button>
             </div>
-            <div className="hidden md:flex lg:m-0 md:ml-2 items-center h-[2rem] sm:m-auto">
-              <Link
-                href={pages[pages.length - 1].href}
-                className="text-[#0A1D35] transition border rounded-lg border-[#0A1D35] px-5 "
-              >
-                {pages[pages.length - 1].name}
-              </Link>
-            </div>
+            <button
+              className="text-[#0A1D35] transition border rounded-lg border-[#0A1D35] px-5 cursor-pointer"
+              onClick={() => setVisible(true)}
+            >
+              Connexion
+            </button>
           </div>
         </div>
         {open && (

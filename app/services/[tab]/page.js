@@ -1,8 +1,8 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import React from "react";
-import Coaching from './../../../components/Coaching';
-import Formation from './../../../components/Formation';
+import Coaching from "../../../components/Coaching";
+import Formation from "../../../components/Formation";
 
 const ServicesPage = () => {
   const { tab } = useParams();

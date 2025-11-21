@@ -28,7 +28,6 @@ const Formation = () => {
         </div>
       </div>
       <div className="flex flex-col  md:flex-row flex-wrap py-4 md:py-0 lg:h-[40vh] ">
-        {/* MON APPROCHE — affiché en premier sur mobile, second sur desktop */}
         <section className="flex flex-row flex-wrap items-center order-1 md:order-2 py-5 md:w-[50%]  justify-evenly">
           <h4 className="text-center font-bold text-lg w-full">MON APPROCHE</h4>
           <div className="flex justify-between gap-6 px-6 py-8 w-full">
